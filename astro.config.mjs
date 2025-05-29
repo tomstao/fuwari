@@ -20,8 +20,11 @@ import { remarkReadingTime } from "./src/plugins/remark-reading-time.mjs";
 
 // https://astro.build/config
 export default defineConfig({
-	site: "https://tomstao.github.io",
-	base: "/fuwari/",
+	// site: "https://tomstao.github.io",
+	// base: "/fuwari/",
+	// trailingSlash: "always",
+	site: "https://taosu.blog",   // ← update to your new custom domain
+	base: "/",                    // ← root base path, not a subfolder
 	trailingSlash: "always",
 	integrations: [
 		tailwind({
