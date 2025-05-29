@@ -27,7 +27,7 @@
 
 ## 🚀 使用方法 1
 
-使用 [create-fuwari](https://github.com/L4Ph/create-fuwari) 在本地初始化项目。
+使用 [create-fuwari](https://github.com/L4Ph/create-fuwari) 在本地初始化项目.
 
 ```sh
 # npm
