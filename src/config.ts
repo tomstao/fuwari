@@ -52,9 +52,10 @@ export const navBarConfig: NavBarConfig = {
 };
 
 export const profileConfig: ProfileConfig = {
-	avatar: "assets/images/demo-avatar.png", // Relative to the /src directory. Relative to the /public directory if it starts with '/'
-	name: "Lorem Ipsum",
-	bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+	// avatar: "assets/images/demo-avatar.png", // Relative to the /src directory. Relative to the /public directory if it starts with '/'
+	avatar: "/profileicon/spike.png",
+	name: "Tao Su",
+	bio: "Hey, I’m Tao — a computer science student, curious builder, and self-taught web developer based in NYC. I’m especially into front-end design. This blog is where I share my projects, school-life lessons, and random thoughts on tech, learning, and more. If you’re into games too, feel free to add me on Steam (link below) — just let me know you found me through the blog. Stick around",
 	links: [
 		{
 			name: "Twitter",
@@ -66,7 +67,7 @@ export const profileConfig: ProfileConfig = {
 		{
 			name: "Steam",
 			icon: "fa6-brands:steam",
-			url: "https://store.steampowered.com",
+			url: "https://steamcommunity.com/id/ordinarytommy/",
 		},
 		{
 			name: "GitHub",
