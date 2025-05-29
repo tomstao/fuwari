@@ -55,7 +55,7 @@ export const profileConfig: ProfileConfig = {
 	// avatar: "assets/images/demo-avatar.png", // Relative to the /src directory. Relative to the /public directory if it starts with '/'
 	avatar: "/profileicon/spike.png",
 	name: "Tao Su",
-	bio: "Hey, I’m Tao — a computer science student, curious builder, and self-taught web developer based in NYC. I’m especially into front-end design. This blog is where I share my projects, school-life lessons, and random thoughts on tech, learning, and more. If you’re into games too, feel free to add me on Steam (link below) — just let me know you found me through the blog. Stick around",
+	bio: "Hey, I’m Tao — a computer science student, curious builder, and self-taught web developer based in NYC. This blog is where I share my projects, school-life lessons, and random thoughts on tech, learning, and more. Stick around",
 	links: [
 		{
 			name: "Twitter",
