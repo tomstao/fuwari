@@ -58,11 +58,11 @@ export const profileConfig: ProfileConfig = {
 	bio: "Hey, I’m Tao — a computer science student, curious builder, and self-taught web developer based in NYC. This blog is where I share my projects, school-life lessons, and random thoughts on tech, learning, and more. Stick around",
 	links: [
 		{
-			name: "Twitter",
-			icon: "fa6-brands:twitter", // Visit https://icones.js.org/ for icon codes
+			name: "LinkedIn",
+			icon: "fa6-brands:linkedin", // Visit https://icones.js.org/ for icon codes
 			// You will need to install the corresponding icon set if it's not already included
 			// `pnpm add @iconify-json/<icon-set-name>`
-			url: "https://twitter.com",
+			url: "https://www.linkedin.com/in/tao-su",
 		},
 		{
 			name: "Steam",
