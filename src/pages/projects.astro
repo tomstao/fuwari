@@ -1,197 +1,26 @@
 ---
-import { Icon } from "astro-icon/components";
+import { getEntry } from "astro:content";
+import { render } from "astro:content";
+import Markdown from "@components/misc/Markdown.astro";
 import I18nKey from "../i18n/i18nKey";
 import { i18n } from "../i18n/translation";
 import MainGridLayout from "../layouts/MainGridLayout.astro";
-const projects = [
-	{
-		title: "Fuwari Blog Template",
-		description:
-			"A beautiful static blog template built with Astro and Tailwind CSS. Features smooth animations, light/dark mode, and responsive design.",
-		image: "/image/demo-banner.png",
-		technologies: ["Astro", "TypeScript", "Tailwind CSS", "Svelte"],
-		github: "https://github.com/saicaca/fuwari",
-		demo: "https://fuwari.vercel.app",
-		featured: true,
-	},
-	{
-		title: "Project Alpha",
-		description:
-			"A modern web application with advanced features and seamless user experience. Built with cutting-edge technologies.",
-		technologies: ["React", "Node.js", "MongoDB", "Express"],
-		github: "https://github.com/username/project-alpha",
-		demo: "https://project-alpha.demo.com",
-		featured: true,
-	},
-	{
-		title: "Data Visualization Tool",
-		description:
-			"Interactive dashboard for data analysis and visualization with real-time updates and custom chart components.",
-		technologies: ["Vue.js", "D3.js", "Python", "FastAPI"],
-		github: "https://github.com/username/data-viz",
-		featured: false,
-	},
-	{
-		title: "Mobile App Suite",
-		description:
-			"Cross-platform mobile application with native performance and beautiful UI/UX design.",
-		technologies: ["React Native", "TypeScript", "Firebase"],
-		github: "https://github.com/username/mobile-app",
-		demo: "https://app-store-link.com",
-		featured: false,
-	},
-	{
-		title: "AI Chat Assistant",
-		description:
-			"Intelligent chatbot with natural language processing capabilities and context-aware responses.",
-		technologies: ["Python", "OpenAI API", "FastAPI", "React"],
-		github: "https://github.com/username/ai-chat",
-		featured: false,
-	},
-	{
-		title: "E-commerce Platform",
-		description:
-			"Full-stack e-commerce solution with payment integration, inventory management, and admin dashboard.",
-		technologies: ["Next.js", "Stripe", "PostgreSQL", "Prisma"],
-		github: "https://github.com/username/ecommerce",
-		demo: "https://ecommerce-demo.com",
-		featured: false,
-	},
-];
 
-const featuredProjects = projects.filter((project) => project.featured);
-const otherProjects = projects.filter((project) => !project.featured);
+const projectsPost = await getEntry("spec", "projects");
+
+if (!projectsPost) {
+	throw new Error("Projects page content not found");
+}
+
+const { Content } = await render(projectsPost);
 ---
 
 <MainGridLayout title="Projects" description="Showcase of my development projects and contributions">
-    <!-- Page Header -->
-    <div class="flex w-full rounded-[var(--radius-large)] overflow-hidden relative mb-6">
-        <div class="card-base z-10 px-9 py-6 relative w-full">
-            <h1 class="text-4xl font-bold text-90 mb-3">
-                <Icon class="inline text-[2.5rem] text-[var(--primary)] mr-2 translate-y-1" name="material-symbols:code-rounded" />
-                Projects
-            </h1>
-            <p class="text-75 text-lg">
-                A collection of projects I've built, ranging from web applications to tools and experiments. 
-                Each project represents a journey of learning and problem-solving.
-            </p>
-        </div>
-    </div>
-
-    <!-- Featured Projects -->
-    <div class="mb-8">
-        <h2 class="text-2xl font-bold text-90 mb-4 px-1">Featured Projects</h2>
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-            {featuredProjects.map((project, index) => (
-                <div class="card-base rounded-[var(--radius-large)] overflow-hidden relative onload-animation group"
-                     style={`animation-delay: ${index * 100}ms`}>
-                    
-                    {project.image && (
-                        <div class="relative h-48 overflow-hidden">
-                            <img src={project.image} alt={project.title} 
-                                 class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" />
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
-                        </div>
-                    )}
-                    
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-90 mb-3 group-hover:text-[var(--primary)] transition-colors">
-                            {project.title}
-                        </h3>
-                        <p class="text-75 mb-4 leading-relaxed">
-                            {project.description}
-                        </p>
-                        
-                        <!-- Technologies -->
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            {project.technologies.map((tech) => (
-                                <span class="px-3 py-1 text-sm rounded-full bg-[var(--primary)]/10 text-[var(--primary)] border border-[var(--primary)]/20">
-                                    {tech}
-                                </span>
-                            ))}
-                        </div>
-                        
-                        <!-- Action Buttons -->
-                        <div class="flex gap-3">
-                            {project.github && (
-                                <a href={project.github} target="_blank" rel="noopener" 
-                                   class="btn-regular flex items-center gap-2 px-4 py-2 rounded-lg bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 transition-colors">
-                                    <Icon name="fa6-brands:github" class="text-lg" />
-                                    <span class="text-sm">Code</span>
-                                </a>
-                            )}
-                            {project.demo && (
-                                <a href={project.demo} target="_blank" rel="noopener"
-                                   class="btn-regular flex items-center gap-2 px-4 py-2 rounded-lg bg-[var(--primary)]/10 text-[var(--primary)] border border-[var(--primary)]/20 hover:bg-[var(--primary)]/20 transition-colors">
-                                    <Icon name="material-symbols:open-in-new-rounded" class="text-lg" />
-                                    <span class="text-sm">Demo</span>
-                                </a>
-                            )}
-                        </div>
-                    </div>
-                </div>
-            ))}
-        </div>
-    </div>
-
-    <!-- Other Projects -->
-    <div>
-        <h2 class="text-2xl font-bold text-90 mb-4 px-1">More Projects</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {otherProjects.map((project, index) => (
-                <div class="card-base rounded-[var(--radius-large)] p-6 relative onload-animation group hover:shadow-lg transition-shadow"
-                     style={`animation-delay: ${(featuredProjects.length + index) * 100}ms`}>
-                    
-                    <h3 class="text-lg font-bold text-90 mb-3 group-hover:text-[var(--primary)] transition-colors">
-                        {project.title}
-                    </h3>
-                    <p class="text-75 mb-4 text-sm leading-relaxed">
-                        {project.description}
-                    </p>
-                    
-                    <!-- Technologies -->
-                    <div class="flex flex-wrap gap-1 mb-4">
-                        {project.technologies.map((tech) => (
-                            <span class="px-2 py-1 text-xs rounded bg-[var(--primary)]/10 text-[var(--primary)]">
-                                {tech}
-                            </span>
-                        ))}
-                    </div>
-                    
-                    <!-- Action Buttons -->
-                    <div class="flex gap-2">
-                        {project.github && (
-                            <a href={project.github} target="_blank" rel="noopener" 
-                               class="btn-regular flex items-center gap-1 px-3 py-1.5 rounded text-xs bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 transition-colors">
-                                <Icon name="fa6-brands:github" class="text-sm" />
-                                <span>Code</span>
-                            </a>
-                        )}
-                        {project.demo && (
-                            <a href={project.demo} target="_blank" rel="noopener"
-                               class="btn-regular flex items-center gap-1 px-3 py-1.5 rounded text-xs bg-[var(--primary)]/10 text-[var(--primary)] border border-[var(--primary)]/20 hover:bg-[var(--primary)]/20 transition-colors">
-                                <Icon name="material-symbols:open-in-new-rounded" class="text-sm" />
-                                <span>Demo</span>
-                            </a>
-                        )}
-                    </div>
-                </div>
-            ))}
-        </div>
-    </div>
-
-    <!-- Call to Action -->
-    <div class="mt-12 flex w-full rounded-[var(--radius-large)] overflow-hidden relative">
-        <div class="card-base z-10 px-9 py-6 relative w-full text-center">
-            <h2 class="text-2xl font-bold text-90 mb-3">Interested in Collaboration?</h2>
-            <p class="text-75 mb-4">
-                I'm always open to discussing new projects, creative ideas, or opportunities to work together.
-            </p>
-            <a href="mailto:contact@example.com" 
-               class="btn-regular inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-[var(--primary)] text-white hover:bg-[var(--primary)]/90 transition-colors">
-                <Icon name="material-symbols:mail-rounded" class="text-lg" />
-                <span>Get in Touch</span>
-            </a>
+    <div class="flex w-full rounded-[var(--radius-large)] overflow-hidden relative min-h-32">
+        <div class="card-base z-10 px-9 py-6 relative w-full ">
+            <Markdown class="mt-2">
+                <Content />
+            </Markdown>
         </div>
     </div>
 </MainGridLayout> 
