@@ -45,6 +45,11 @@ export const navBarConfig: NavBarConfig = {
 		LinkPreset.Archive,
 		LinkPreset.About,
 		{
+			name: "Projects",
+			url: "/projects/", // Internal links should not include the base path, as it is automatically added
+			external: false,
+		},
+		{
 			name: "GitHub",
 			url: "https://github.com/saicaca/fuwari", // Internal links should not include the base path, as it is automatically added
 			external: true, // Show an external link icon and will open in a new tab
@@ -56,7 +61,7 @@ export const profileConfig: ProfileConfig = {
 	// avatar: "assets/images/demo-avatar.png", // Relative to the /src directory. Relative to the /public directory if it starts with '/'
 	avatar: "/profileicon/spike.png",
 	name: "Tao Su",
-	bio: "Hey, I’m Tao — a computer science student, curious builder, and self-taught web developer based in NYC. This blog is where I share my projects, school-life lessons, and random thoughts on tech, learning, and more. Stick around",
+	bio: "Hey, I'm Tao — a computer science student, curious builder, and self-taught web developer based in NYC. This blog is where I share my projects, school-life lessons, and random thoughts on tech, learning, and more. Stick around",
 	links: [
 		{
 			name: "LinkedIn",

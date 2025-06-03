@@ -1,7 +1,7 @@
 # About
-This is the demo site for [Fuwari](https://github.com/saicaca/fuwari).
+This is the blog site for [Tao Su](https://github.com/tomstao/tomstao.git).
 
-::github{repo="saicaca/fuwari"}
+::github{repo="tomstao/tomstao"}
 
 > ### Sources of images used in this site
 > - [Unsplash](https://unsplash.com/)
