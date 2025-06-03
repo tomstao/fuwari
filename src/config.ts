@@ -73,7 +73,7 @@ export const profileConfig: ProfileConfig = {
 		{
 			name: "Steam",
 			icon: "fa6-brands:steam",
-			url: "https://steamcommunity.com/id/ordinarytommy/",
+			url: "https://store.steampowered.com/",
 		},
 		{
 			name: "GitHub",
