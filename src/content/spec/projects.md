@@ -4,15 +4,9 @@ Welcome to my project showcase! Here are some of the projects I've been working 
 
 ## Featured Projects
 
-::github{repo="tomstao/tomstao"}
+::github{repo="tomstao/izzeImitation"}
 
-My personal GitHub profile repository where I share my coding journey and projects.
-
-## My blog template
-::github{repo="tomstao/fuwari"}
-
-A beautiful static blog template built with Astro and Tailwind CSS. Features smooth animations, light/dark mode, and responsive design. (If you like my blog, you can visit the original repo(or mine) and modify it as you want)
-
+A mock full-stack dessert ordering web app built with React, Flask, and PostgreSQL.
 
 ## Web Development Projects
 
