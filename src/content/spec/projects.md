@@ -4,13 +4,15 @@ Welcome to my project showcase! Here are some of the projects I've been working 
 
 ## Featured Projects
 
-::github{repo="saicaca/fuwari"}
-
-A beautiful static blog template built with Astro and Tailwind CSS. Features smooth animations, light/dark mode, and responsive design.
-
 ::github{repo="tomstao/tomstao"}
 
 My personal GitHub profile repository where I share my coding journey and projects.
+
+## My blog template
+::github{repo="tomstao/fuwari"}
+
+A beautiful static blog template built with Astro and Tailwind CSS. Features smooth animations, light/dark mode, and responsive design. (If you like my blog, you can visit the original repo(or mine) and modify it as you want)
+
 
 ## Web Development Projects
 
